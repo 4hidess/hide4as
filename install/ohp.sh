@@ -1,5 +1,5 @@
+#!/bin/bash
 
-GitUser="4hidess"
 #Direct Proxy Squid For OpenVPN TCP
 RED='${RED}'
 GREEN='${GREEN}'
