@@ -1,5 +1,5 @@
+#!/bin/bash
 
-GitUser="4hidess"
 #IZIN SCRIPT
 MYIP=$(curl -sS ipv4.icanhazip.com)
 echo -e "${GREEN}loading...${NC}"
