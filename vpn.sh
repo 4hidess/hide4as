@@ -1,5 +1,5 @@
+#!/bin/bash
 
-GitUser="4hidess"
 # initialisasi var
 export DEBIAN_FRONTEND=noninteractive
 OS=`uname -m`;
