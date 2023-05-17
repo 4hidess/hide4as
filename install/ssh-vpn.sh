@@ -1,8 +1,5 @@
-# ==================================================
+#!/bin/bash
 
-GitUser="4hidess"
-
-# // initializing var
 export DEBIAN_FRONTEND=noninteractive
 MYIP=$(wget -qO- icanhazip.com);
 MYIP2="s/xxxxxxxxx/$MYIP/g";
