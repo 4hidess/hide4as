@@ -1,3 +1,4 @@
+#!/bin/bash
 
 GitUser="4hidess"
 #Direct Proxy Squid For OpenVPN TCP
