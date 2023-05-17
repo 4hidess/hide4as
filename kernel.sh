@@ -1,3 +1,5 @@
+#!/bin/bash
+
 red='${RED}'
 green='${GREEN}'
 NC='${NC}'

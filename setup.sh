@@ -16,7 +16,7 @@ CYAN='\033[0;36m'
 
 clear
 mkdir /var/lib/premium-script;
-default_email=$( curl https://raw.githubusercontent.com/4hidess/email/main/default.conf )
+default_email="email@example.com"
 clear
 #Nama penyedia script
 echo -e "${GREEN}════════════════════════════════════════════════════════════${NC}"
@@ -77,7 +77,7 @@ echo -e "${GREEN}DONE INSTALLING OHP PORT${NC}"
 clear
 #install websocket
 echo -e "${GREEN}INSTALLING WEBSOCKET PORT...${NC}"
-wget https://raw.githubusercontent.com/4hidess/hide4as/main/websocket-python/websocket.sh && chmod +x websocket.sh && screen -S websocket.sh ./websocket.sh
+wget https://raw.githubusercontent.com/4hidess/hide4as/main/websocket/websocket.sh && chmod +x websocket.sh && screen -S websocket.sh ./websocket.sh
 echo -e "${GREEN}DONE INSTALLING WEBSOCKET PORT${NC}"
 clear
 #install SET-BR
