@@ -1,33 +1,9 @@
-
-GitUser="4hidess"
+#!/bin/bash
 
 # // IZIN SCRIPT
 MYIP=$(curl -sS ipv4.icanhazip.com)
 export RED='\033[0;31m';
 export NC='\033[0m';
-
-# // Valid Script
-VALIDITY () {
-    clear
-    today=`date -d "0 days" +"%Y-%m-%d"`
-    Exp1=$(curl -sS https://raw.githubusercontent.com/4hidess/allow/main/ipvps.conf | grep $MYIP | awk '{print $4}')
-    if [[ $today < $Exp1 ]]; then
-    echo -e "${GREEN}YOUR SCRIPT ACTIVE..${NC}"
-    else
-    echo -e "${RED}YOUR SCRIPT HAS EXPIRED!${NC}";
-    echo -e "${RED}Please renew your ipvps first${NC}"
-    exit 0
-fi
-}
-IZIN=$(curl -sS https://raw.githubusercontent.com/4hidess/allow/main/ipvps.conf | awk '{print $5}' | grep $MYIP)
-if [ $MYIP = $MYIP ]; then
-echo -e "${GREEN}Permission Accepted...${NC}"
-VALIDITY
-else
-echo -e "${RED}Permission Denied!${NC}";
-echo -e "${RED}Please buy script first${NC}"
-exit 0
-fi
 
 tls="$(cat ~/log-install.txt | grep -w "Vmess Ws Tls" | cut -d: -f2|sed 's/ //g')"
 none="$(cat ~/log-install.txt | grep -w "Vmess Ws None Tls" | cut -d: -f2|sed 's/ //g')"
