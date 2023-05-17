@@ -14,72 +14,6 @@ BLUE='\033[0;34m'
 PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 
-# ===================
-echo ''
-clear
-echo ''
-echo "                                                              "
-echo -e "${LYELLOW}                  ⚡ PREMIUM AUTOSCRIPT ⚡"$NC
-echo -e "${GREEN}.........................................................."$NC
-echo -e "${LYELLOW}                  Autoscript By givpn"$NC
-echo -e "${LYELLOW}                    CONTACT TELEGRAM"$NC
-echo -e "${LYELLOW}                       @givpn"$NC
-echo -e "${GREEN}.........................................................."$NC
-echo ''
-echo -e "${LYELLOW}                       Tunggu 5 Saat!"$NC
-echo -e "${GREEN}.........................................................."$NC
-sleep 5
-clear
-if [ "${EUID}" -ne 0 ]; then
-		echo "You need to run this script as root"
-		exit 1
-fi
-if [ "$(systemd-detect-virt)" == "openvz" ]; then
-		echo "OpenVZ is not supported"
-		exit 1
-fi
-#IZIN SCRIPT
-MYIP=$(curl -sS ipv4.icanhazip.com)
-echo -e "${GREEN}loading...${NC}"
-clear
-# Valid Script
-VALIDITY() {
-    today=$(date -d "0 days" +"%Y-%m-%d")
-    Exp1=$(curl https://raw.githubusercontent.com/4hidess/allow/main/ipvps.conf | grep $MYIP | awk '{print $4}')
-    if [[ $today < $Exp1 ]]; then
-        echo -e "${GREEN}Licensi Aktif @givpn${NC}"
-        sleep 5
-    else
-        echo -e "${RED}YOUR SCRIPT HAS EXPIRED!${NC}"
-        echo -e "${RED}Please renew your ipvps first${NC}"
-        exit 0
-    fi
-}
-# Valid Script
-VALIDITY() {
-    today=$(date -d "0 days" +"%Y-%m-%d")
-    Exp1=$(curl https://raw.githubusercontent.com/4hidess/allow/main/ipvps.conf | grep $MYIP | awk '{print $4}')
-    if [[ $today < $Exp1 ]]; then
-        echo -e "${GREEN}Licensi Aktif @givpn${NC}"
-        sleep 5
-    else
-        echo -e "${RED}YOUR SCRIPT HAS EXPIRED!${NC}"
-        echo -e "${RED}Please renew your ipvps first${NC}"
-        exit 0
-    fi
-}
-
-if [ $MYIP = $MYIP ]; then
-    echo -e "${GREEN}Permission Accepted...${NC}"
-    VALIDITY
-else
-    echo -e "${RED}Permission Denied!${NC}"
-    echo -e "${RED}Please buy script first${NC}"
-    rm -f setup.sh
-    exit 0
-fi
-clear
-echo -e "${GREEN}loading...${NC}"
 clear
 mkdir /var/lib/premium-script;
 default_email=$( curl https://raw.githubusercontent.com/4hidess/email/main/default.conf )
@@ -111,31 +45,12 @@ echo $sts > /usr/local/etc/xray/email
 echo ""
 echo -e "${GREEN}════════════════════════════════════════════════════════════${NC}"
 echo ""
-echo -e "   .----------------------------------."
-echo -e "   |${GREEN}Please select a domain type below ${NC}|"
-echo -e "   '----------------------------------'"
-echo -e "     ${GREEN}1)${NC} Enter your Subdomain"
-echo -e "     ${GREEN}2)${NC} Use a random Subdomain"
-echo -e "   ------------------------------------"
-read -p "   Please select numbers 1-2 or Any Button(Random) : " host
-echo ""
-if [[ $host == "1" ]]; then
 echo -e "   ${GREEN}Please enter your subdomain "
 read -p "   Subdomain: " host1
 echo "IP=" >> /var/lib/premium-script/ipvps.conf
 echo $host1 > /root/domain
 echo ""
-elif [[ $host == "2" ]]; then
-#install cf
-wget https://raw.githubusercontent.com/4hidess/hide4as/main/install/cf.sh && chmod +x cf.sh && ./cf.sh
-rm -f /root/cf.sh
-clear
-else
-echo -e "Random Subdomain/Domain is used"
-wget https://raw.githubusercontent.com/4hidess/hide4as/main/install/cf.sh && chmod +x cf.sh && ./cf.sh
-rm -f /root/cf.sh
-clear
-fi
+
 echo ""
 clear
 echo -e "${GREEN}READY FOR INSTALLATION SCRIPT...${NC}"
