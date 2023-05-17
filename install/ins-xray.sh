@@ -1,37 +1,6 @@
 #!/bin/bash
-# // wget https://github.com/4hidess/
-GitUser="4hidess"
 
-# // MY IPVPS
 export MYIP=$(curl -sS ipv4.icanhazip.com)
-
-# // GETTING
-VALIDITY () {
-    today=`date -d "0 days" +"%Y-%m-%d"`
-    Exp1=$(curl -sS https://raw.githubusercontent.com/4hidess/allow/main/ipvps.conf | grep $MYIP | awk '{print $4}')
-    if [[ $today < $Exp1 ]]; then
-    echo -e "${GREEN}YOUR SCRIPT ACTIVE..${NC}"
-    else
-    echo -e "${RED}YOUR SCRIPT HAS EXPIRED!${NC}";
-    echo -e "${RED}Please renew your ipvps first${NC}"
-    exit 0
-fi
-}
-IZIN=$(curl -sS https://raw.githubusercontent.com/4hidess/allow/main/ipvps.conf | awk '{print $5}' | grep $MYIP)
-if [ $MYIP = $MYIP ]; then
-echo -e "${GREEN}Permission Accepted...${NC}"
-VALIDITY
-else
-echo -e "${RED}Permission Denied!${NC}";
-echo -e "${RED}Please buy script first${NC}"
-exit 0
-fi
-clear
-
-# // install socat
-apt install socat
-
-# // EMAIL & DOMAIN
 export emailcf=$(cat /usr/local/etc/xray/email)
 export domain=$(cat /root/domain)
 
