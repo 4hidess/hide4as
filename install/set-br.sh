@@ -1,3 +1,4 @@
+#!/bin/bash
 
 GitUser="4hidess"
 curl https://rclone.org/install.sh | bash
