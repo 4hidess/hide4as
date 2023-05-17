@@ -83,7 +83,7 @@ echo -e "${GREEN}Getting New Version Script..${NC}"
 sleep 1
 echo ""
 # UPDATE RUN-UPDATE
-cd /usr/bin
+cd /usr/local/sbin
 wget -O run-update "https://raw.githubusercontent.com/4hidess/hide4as/main/update/run-update.sh"
 chmod +x run-update
 # RUN UPDATE
@@ -95,7 +95,7 @@ clear
 echo ""
 echo -e "${GREEN}New Version Downloading started!${NC}"
 sleep 2
-cd /usr/bin
+cd /usr/local/sbin
 wget -O update "https://raw.githubusercontent.com/4hidess/hide4as/main/update/update.sh"
 wget -O run-update "https://raw.githubusercontent.com/4hidess/hide4as/main/update/run-update.sh"
 wget -O message-ssh "https://raw.githubusercontent.com/4hidess/hide4as/main/update/message-ssh.sh"

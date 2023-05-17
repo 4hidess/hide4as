@@ -1168,7 +1168,7 @@ systemctl enable xray@trojannone
 systemctl restart xray@trojannone
 
 # download script
-cd /usr/bin
+cd /usr/local/sbin
 wget -O port-xray "https://raw.githubusercontent.com/4hidess/hide4as/main/change-port/port-xray.sh"
 wget -O certv2ray "https://raw.githubusercontent.com/4hidess/hide4as/main/cert.sh"
 wget -O trojaan "https://raw.githubusercontent.com/4hidess/hide4as/main/menu/trojaan.sh"

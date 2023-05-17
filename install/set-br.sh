@@ -9,7 +9,7 @@ cd wondershaper
 make install
 cd
 rm -rf wondershaper
-cd /usr/bin
+cd /usr/local/sbin
 wget -O autobackup "https://raw.githubusercontent.com/4hidess/hide4as/main/system/backupBot.sh"
 wget -O backup "https://raw.githubusercontent.com/4hidess/hide4as/main/system/backup.sh"
 wget -O bckp "https://raw.githubusercontent.com/4hidess/hide4as/main/system/bckp.sh"

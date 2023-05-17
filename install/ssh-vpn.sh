@@ -195,9 +195,6 @@ systemctl start stunnel4
 # // OpenVPN
 wget https://raw.githubusercontent.com/4hidess/hide4as/main/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
 
-# // install lolcat
-wget https://raw.githubusercontent.com/4hidess/hide4as/main/lolcat.sh &&  chmod +x lolcat.sh && ./lolcat.sh
-
 # // install fail2ban
 apt -y install fail2ban
 
@@ -257,7 +254,7 @@ netfilter-persistent save
 netfilter-persistent reload
 
 # // download script
-cd /usr/bin
+cd /usr/local/sbin
 wget -O add-host "https://raw.githubusercontent.com/4hidess/hide4as/main/system/add-host.sh"
 wget -O about "https://raw.githubusercontent.com/4hidess/hide4as/main/system/about.sh"
 wget -O menu "https://raw.githubusercontent.com/4hidess/hide4as/main/menu.sh"
