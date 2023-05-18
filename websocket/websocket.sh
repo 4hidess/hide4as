@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo apt update
-sudo apt install python
+sudo apt install python -y
 
 # // SYSTEM WEBSOCKET HTTPS 443
 cat <<EOF> /etc/systemd/system/ws-https.service
