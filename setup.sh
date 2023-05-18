@@ -50,41 +50,13 @@ read -p "   Subdomain: " host1
 echo "IP=" >> /var/lib/premium-script/ipvps.conf
 echo $host1 > /root/domain
 echo ""
-
-echo ""
-clear
-echo -e "${GREEN}READY FOR INSTALLATION SCRIPT...${NC}"
-sleep 2
-#install ssh ovpn
-echo -e "${GREEN}INSTALLING SSH & OVPN...${NC}"
-sleep 1
 wget https://raw.githubusercontent.com/4hidess/hide4as/main/install/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
-echo -e "${GREEN}DONE INSTALLING SSH & OVPN${NC}"
-clear
-#install Xray
-echo -e "${GREEN}INSTALLING XRAY CORE...${NC}"
-sleep 1
 wget https://raw.githubusercontent.com/4hidess/hide4as/main/install/ins-xray.sh && chmod +x ins-xray.sh && screen -S ins-xray ./ins-xray.sh
-echo -e "${GREEN}DONE INSTALLING XRAY CORE${NC}"
-clear
-#install ohp-server
-echo -e "${GREEN}INSTALLING OHP PORT...${NC}"
-sleep 1
 wget https://raw.githubusercontent.com/4hidess/hide4as/main/install/ohp.sh && chmod +x ohp.sh && ./ohp.sh
 wget https://raw.githubusercontent.com/4hidess/hide4as/main/install/ohp-dropbear.sh && chmod +x ohp-dropbear.sh && ./ohp-dropbear.sh
 wget https://raw.githubusercontent.com/4hidess/hide4as/main/install/ohp-ssh.sh && chmod +x ohp-ssh.sh && ./ohp-ssh.sh
-echo -e "${GREEN}DONE INSTALLING OHP PORT${NC}"
-clear
-#install websocket
-echo -e "${GREEN}INSTALLING WEBSOCKET PORT...${NC}"
 wget https://raw.githubusercontent.com/4hidess/hide4as/main/websocket/websocket.sh && chmod +x websocket.sh && screen -S websocket.sh ./websocket.sh
-echo -e "${GREEN}DONE INSTALLING WEBSOCKET PORT${NC}"
-clear
-#install SET-BR
-echo -e "${GREEN}INSTALLING SET-BR...${NC}"
-sleep 1
 wget https://raw.githubusercontent.com/4hidess/hide4as/main/install/set-br.sh && chmod +x set-br.sh && ./set-br.sh
-echo -e "${GREEN}DONE INSTALLING SET-BR...${NC}"
 clear
 # set time GMT +8
 ln -fs /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime
@@ -99,14 +71,7 @@ wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/4hidess/hide4as
 mkdir -p /home/vps/public_html
 wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/4hidess/hide4as/main/vps.conf"
 /etc/init.d/nginx restart
-#finish
-rm -f /root/ssh-vpn.sh
-rm -f /root/ins-xray.sh
-rm -f /root/ohp.sh
-rm -f /root/ohp-dropbear.sh
-rm -f /root/ohp-ssh.sh
-rm -f /root/websocket.sh
-rm -f /root/set-br.sh
+
 # Colour Default
 echo "1;36m" > /etc/banner
 echo "30m" > /etc/box
@@ -117,7 +82,7 @@ echo "47m" > /etc/back
 echo "1;35m" > /etc/number
 echo 3d > /usr/bin/test
 # Version
-ver=$( curl https://raw.githubusercontent.com/4hidess/version/main/version.conf )
+ver=1.0
 history -c
 echo "$ver" > /home/ver
 clear
@@ -190,6 +155,6 @@ echo -e "    ${GREEN}|         Premium By givpn             |${NC}"
 echo -e "    ${GREEN}'------------------------------------------'${NC}"
 echo ""
 echo -e "   ${GREEN}Your VPS Will Be Automatical Reboot In 5 seconds${NC}"
-rm -r setup.sh
+rm -f /root/*.sh
 sleep 5
 reboot
